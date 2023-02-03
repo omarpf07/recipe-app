@@ -1,0 +1,20 @@
+<div class="grid grid-rows-4 grid-flow-col gap-4">
+    <mat-card *ngFor="let hit of hits">
+        <mat-card-header>
+            <mat-card-title-group>
+                <mat-card-title>{{hit.recipe.label}}</mat-card-title>
+              <img mat-card-md-image [src]="hit.recipe.image" [alt]="hit.recipe.label">
+            </mat-card-title-group>
+          </mat-card-header>
+          <mat-card-content>
+            <span><b>{{hit.recipe.calories | number: '1.0-0' }}</b> Calories </span>
+            <span><b>{{hit.recipe.ingredients.length}}</b> ingredients</span>
+          </mat-card-content>
+          <mat-divider></mat-divider>
+          <mat-card-footer>
+            <button mat-button>LIKE</button>
+            <button mat-button>SHARE</button>
+          </mat-card-footer>
+      </mat-card>
+</div>
+

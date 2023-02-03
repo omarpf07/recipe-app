@@ -4,9 +4,15 @@ import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 
+
+
+/** Dependencies */
 import { MaterialModule } from './dependencies/material';
+import { HeroIconsModule } from './dependencies/heroicons';
+
 
 import { LayoutComponent } from './components/layout/layout.component';
+
 
 
 
@@ -20,14 +26,19 @@ import { LayoutComponent } from './components/layout/layout.component';
     RouterModule,
     FormsModule,
     ReactiveFormsModule,
-    MaterialModule
+    MaterialModule,
+    HeroIconsModule
+   
   ], 
   exports: [
-    MaterialModule,
+    
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
 
+    //Dependency modules
+    MaterialModule,
+    HeroIconsModule,
     //Components
     LayoutComponent
   ]

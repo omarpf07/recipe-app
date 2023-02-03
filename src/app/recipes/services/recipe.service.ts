@@ -15,7 +15,8 @@ export class RecipeService {
     let params = new HttpParams()
       .set('app_id', this.appId)
       .set('app_key', this.appKey)
-      .set('q', ingredient);
+      .set('q', ingredient)
+      .set('imageSize', 'THUMBNAIL');
 
     return this.http.get<RecipeSearchResponse>('https://api.edamam.com/search', { params });
   }
