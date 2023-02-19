@@ -8,17 +8,20 @@ import {HttpClientModule} from '@angular/common/http';
 
 /** Dependencies */
 import { MaterialModule } from './dependencies/material';
-import { HeroIconsModule } from './dependencies/heroicons';
 
 
 import { LayoutComponent } from './components/layout/layout.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { MobileMenuComponent } from './components/mobile-menu/mobile-menu.component';
 
 
 
 
 @NgModule({
   declarations: [
-    LayoutComponent
+    LayoutComponent,
+    NavbarComponent,
+    MobileMenuComponent
   ],
   imports: [
     CommonModule,
@@ -27,7 +30,6 @@ import { LayoutComponent } from './components/layout/layout.component';
     FormsModule,
     ReactiveFormsModule,
     MaterialModule,
-    HeroIconsModule
    
   ], 
   exports: [
@@ -38,7 +40,6 @@ import { LayoutComponent } from './components/layout/layout.component';
 
     //Dependency modules
     MaterialModule,
-    HeroIconsModule,
     //Components
     LayoutComponent
   ]

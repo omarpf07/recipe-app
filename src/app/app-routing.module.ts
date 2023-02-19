@@ -3,9 +3,11 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   { path: 'recipes', loadChildren: () => import('./recipes/recipes.module').then(m => m.RecipesModule) },
+  { path: '', loadChildren: () => import('./home/home.module').then(m => m.HomeModule) },
+  
   {
     path: '**',
-    redirectTo: 'recipes'
+    redirectTo: 'home'
   }  
 ];
 

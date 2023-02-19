@@ -1,0 +1,5 @@
+<mat-nav-list>
+    <a *ngFor="let item of links" [routerLink]="item.path" mat-list-item (click)="openLink($event)">
+      <span matListItemTitle>{{item.name}}</span>
+    </a>
+  </mat-nav-list>
