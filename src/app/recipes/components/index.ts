@@ -1,2 +1,2 @@
-export * from './recipe-details';
-export * from './recipe-list';
+export * from './pages/recipe-details';
+export * from './pages/recipe-list';

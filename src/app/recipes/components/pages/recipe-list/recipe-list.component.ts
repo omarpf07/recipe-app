@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { RecipeService } from '../../services/recipe.service';
-import { Hit } from '../../model/interfaces';
+import { RecipeService } from '../../../services/recipe.service';
+import { Hit } from '../../../model/interfaces';
 import { Subject, takeUntil } from 'rxjs';
 
 @Component({
@@ -16,7 +16,7 @@ export class RecipeListComponent implements OnInit, OnDestroy {
   constructor(private recipesService: RecipeService) { }
 
   ngOnInit() {
-    this.getRecipesByIngredient('pizza')
+    this.getRecipesByIngredient('chicken');
   }
 
   getRecipesByIngredient(ingredient: string) {
