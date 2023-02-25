@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { RecipeService } from '../../../services/recipe.service';
-import { Hit } from '../../../model/interfaces';
+import { RecipeService } from '../../services/recipe.service';
+import { Hit } from '../../model/interfaces';
 import { Subject, takeUntil } from 'rxjs';
 
 @Component({

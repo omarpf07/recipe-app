@@ -33,6 +33,7 @@ export interface Recipe {
     totalNutrients:  { [key: string]: Total };
     totalDaily:      { [key: string]: Total };
     digest:          Digest[];
+    id:             string;
 }
 
 export interface Digest {
