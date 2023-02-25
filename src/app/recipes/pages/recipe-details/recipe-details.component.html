@@ -1,0 +1,86 @@
+<div class="max-w-screen-lg mx-auto" *ngIf="recipe">
+    <mat-card>
+        <mat-card-header>
+            <img mat-card-avatar [src]="recipe.image" alt="{{ recipe.label }}">
+            <mat-card-title>{{ recipe.label }}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <div class="grid grid-cols-3 gap-2">
+                <div class="col-span-1">
+                    <mat-list role="list">
+                        <mat-list-item class="text-gray-700 font-medium"><mat-icon
+                                class="text-red-500">local_dining</mat-icon>
+                            Cuisine type:</mat-list-item>
+                        <mat-list-item class="text-gray-700 font-medium"><mat-icon
+                                class="text-red-500">local_pizza</mat-icon>
+                            Meal type:</mat-list-item>
+                        <mat-list-item class="text-gray-700 font-medium"><mat-icon
+                                class="text-red-500">category</mat-icon> Dish
+                            type:</mat-list-item>
+                        <mat-list-item class="text-gray-700 font-medium"><mat-icon
+                                class="text-red-500">whatshot</mat-icon>
+                            Calories:</mat-list-item>
+                        <mat-list-item class="text-gray-700 font-medium"><mat-icon
+                                class="text-red-500">fitness_center</mat-icon> Total weight:</mat-list-item>
+                        <mat-list-item class="text-gray-700 font-medium"><mat-icon
+                                class="text-red-500">schedule</mat-icon>
+                            Total time:</mat-list-item>
+                    </mat-list>
+                </div>
+                <div class="col-span-2">
+                    <mat-list role="list">
+                        <mat-list-item>
+                            <mat-chip-listbox>
+                                <mat-chip *ngFor="let cuisineType of recipe.cuisineType" color="primary">{{ cuisineType
+                                    }}</mat-chip>
+                            </mat-chip-listbox>
+                        </mat-list-item>
+                        <mat-list-item>
+                            <mat-chip-listbox>
+                                <mat-chip *ngFor="let mealType of recipe.mealType" color="accent">{{ mealType
+                                    }}</mat-chip>
+                            </mat-chip-listbox>
+                        </mat-list-item>
+                        <mat-list-item>
+                            <mat-chip-listbox>
+                                <mat-chip *ngFor="let dishType of recipe.dishType" color="warn">{{ dishType
+                                    }}</mat-chip>
+                            </mat-chip-listbox>
+                        </mat-list-item>
+                        <mat-list-item>
+                            <span class="text-gray-900 font-medium">{{ recipe.calories | number: '1.0-0' }}</span>
+                        </mat-list-item>
+                        <mat-list-item>
+                            <span class="text-gray-900 font-medium">{{ recipe.totalWeight | number: '1.0-0' }}</span>
+                        </mat-list-item>
+                        <mat-list-item>
+                            <span class="text-gray-900 font-medium">{{ recipe.totalTime | number: '1.0-0' }}
+                                minutes</span>
+                        </mat-list-item>
+                    </mat-list>
+                    <!-- <ul class="list-disc list-inside text-gray-700 font-medium">
+                        <li *ngFor="let nutrient of recipe.totalNutrients | keyvalue">{{ nutrient.key }}: {{
+                            nutrient.value.quantity }} {{ nutrient.value.unit }}</li>
+                    </ul>
+                    <ul class="list-disc list-inside text-gray-700 font-medium">
+                        <li *ngFor="let daily of recipe.totalDaily | keyvalue">{{ daily.key }}: {{ daily.value.quantity
+                            }} {{ daily.value.unit }}</li>
+                    </ul> -->
+                </div>
+            </div>
+            <div class="mt-4">
+                <mat-label class="text-gray-700 font-medium"><mat-icon class="text-red-500">list_alt</mat-icon>
+                    Ingredients:</mat-label>
+                <mat-list dense>
+                    <mat-list-item *ngFor="let ingredient of recipe.ingredientLines">
+                        {{ingredient }}
+                    </mat-list-item>
+                </mat-list>
+            </div>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-raised-button color="accent"><a [href]="recipe.url" target="_blank">View this recipe <mat-icon>
+                        open_in_new</mat-icon></a></button>
+        </mat-card-actions>
+    </mat-card>
+</div>

@@ -1,0 +1,25 @@
+<mat-card class="recipe-cardw">
+    <mat-card-header>
+      <mat-card-title-group>
+        <mat-card-title class="recipe-title">{{hit.recipe.label}}</mat-card-title>
+        <img mat-card-md-image [src]="hit.recipe.image" [alt]="hit.recipe.label">
+      </mat-card-title-group>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="recipe-details">
+        <span><b>{{hit.recipe.calories | number: '1.0-0' }}</b> Calories </span>
+        <span><b>{{hit.recipe.ingredients.length}}</b> ingredients</span>
+      </div>
+    </mat-card-content>
+    <mat-card-actions class="flex justify-between items-end">
+      <button mat-flat-button color="accent" (click)="navigateToRecipeDetails(hit.recipe.id!)">VIEW DETAILS</button>
+      <div>
+        <button mat-icon-button color="accent">
+          <mat-icon>share</mat-icon>
+        </button>
+        <button mat-icon-button aria-label="Add to favorites">
+          <mat-icon color="warn">favorite_border</mat-icon>
+        </button>
+      </div>
+    </mat-card-actions>
+  </mat-card>
